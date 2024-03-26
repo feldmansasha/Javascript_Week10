@@ -13,7 +13,6 @@ const url="https://feldmansasha.github.io/Javascript_Week10/js/i-scream.json";
 const request=new Request(url);
 // STEP 6: Make a network request with the fetch() function, which returns a Response object
 const response=await fetch(request);
-console.log(response);
 // STEP 7: Capture the returned Response object and covert to a JSON object using json()
 const responseJson=await response.json();
 // STEP 8: Output the iScream JSON object to the console 
@@ -59,11 +58,18 @@ function showTopFlavors(jsonData){
     image.setAttribute("src", topFlavors[i].image);
     console.log(image);
     // STEP 10g: Build a loop for the ingredients array in the JSON
-
+    let ingredients=topFlavors[i].ingredients;
+    for(let j=0; j<ingredients.length; j++){
+        console.log(ingredients[j]);
+        let listItem=document.createElement("li");
+        listItem.textContent=ingredients[j];
+        list.appendChild(listItem);
+    }
     // STEP 10i: Append each complete ARTICLE element to the SECTION element
     article.appendChild(h2);
     article.appendChild(p1);
     article.appendChild(p2);
+    article.appendChild(list);
     article.appendChild(image);
 
     section.appendChild(article);
