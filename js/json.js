@@ -49,7 +49,7 @@ function showTopFlavors(jsonData){
     let h2=document.createElement("h2");
     let p1=document.createElement("p");
     let p2=document.createElement("p");
-    let image=document.createElement("image");
+    let image=document.createElement("img");
     let list=document.createElement("ul");
     // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
     h2.textContent=topFlavors[i].name;
